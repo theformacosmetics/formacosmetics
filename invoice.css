@@ -1,0 +1,37 @@
+/* Invoice sheet: A4, black on white, Inter. Edit here to restyle the invoice. */
+.invoice-sheet { width: 794px; max-width: 100%; margin: 0 auto; background: #fff; color: #000; font: 400 12px/1.45 'Inter', sans-serif; padding: 40px 44px; border: 1px solid var(--line); }
+.invoice-sheet h2, .invoice-sheet .inv-title { font-family: 'Manrope', sans-serif; }
+.inv-top { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #000; padding-bottom: 16px; }
+.inv-logo img { max-height: 56px; max-width: 200px; display: block; }
+.inv-logo .wordmark { font: 800 26px 'Manrope', sans-serif; letter-spacing: .2em; }
+.inv-co { text-align: right; font-size: 11.5px; color: #333; }
+.inv-co strong { color: #000; font-size: 13px; }
+.inv-title { font-size: 20px; font-weight: 800; margin: 18px 0 10px; letter-spacing: .02em; }
+.inv-meta { display: flex; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
+.inv-meta > div { flex: 1; }
+.inv-meta .lbl { font: 600 10.5px 'Manrope', sans-serif; color: #737373; margin-bottom: 2px; }
+.inv-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+.inv-table th { background: #000; color: #fff; font: 600 11px 'Manrope', sans-serif; padding: 7px 8px; text-align: left; }
+.inv-table td { padding: 7px 8px; border-bottom: 1px solid #E5E5E5; vertical-align: top; }
+.inv-table .r { text-align: right; font-variant-numeric: tabular-nums; }
+.inv-bottom { display: flex; justify-content: space-between; gap: 28px; }
+.inv-bottom > div { flex: 1; }
+.inv-totals { width: 270px; flex: none !important; }
+.inv-totals div { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #E5E5E5; font-variant-numeric: tabular-nums; }
+.inv-totals .grand { border-top: 2px solid #000; border-bottom: 2px solid #000; font: 800 14px 'Manrope', sans-serif; padding: 8px 0; margin-top: 6px; }
+.inv-words { margin: 12px 0; font-style: italic; color: #333; }
+.inv-foot { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 28px; gap: 24px; }
+.inv-sign { text-align: center; min-width: 190px; }
+.inv-sign img { max-height: 54px; display: block; margin: 0 auto 4px; }
+.inv-sign .line { border-top: 1px solid #000; padding-top: 4px; font-size: 11px; }
+.inv-terms { font-size: 10.5px; color: #333; white-space: pre-line; }
+.inv-footer { text-align: center; margin-top: 24px; font-size: 10.5px; color: #737373; border-top: 1px solid #E5E5E5; padding-top: 10px; white-space: pre-line; }
+.inv-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+#printRoot { display: none; }
+@media print {
+  body.printing > *:not(#printRoot) { display: none !important; }
+  body.printing #printRoot { display: block; }
+  .invoice-sheet { border: 0; padding: 0; width: 100%; }
+  @page { size: A4; margin: 12mm; }
+}
+@media (max-width: 860px) { .invoice-sheet { padding: 20px; width: 794px; } .inv-scroll { overflow-x: auto; } }

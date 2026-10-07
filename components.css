@@ -1,0 +1,72 @@
+/* Buttons */
+.btn {
+  font: 500 13.5px var(--font-body); padding: 9px 16px; border-radius: var(--radius);
+  border: 1px solid var(--black); background: var(--black); color: var(--white);
+  cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+}
+.btn:hover { background: var(--ink); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn-outline { background: var(--white); color: var(--black); border-color: var(--line-strong); }
+.btn-outline:hover { background: var(--wash); border-color: var(--black); }
+.btn-ghost { background: transparent; color: var(--muted); border-color: transparent; }
+.btn-ghost:hover { color: var(--black); background: var(--wash); }
+.btn-sm { padding: 5px 10px; font-size: 12.5px; }
+
+/* Forms */
+.field { display: grid; gap: 6px; }
+.field label { font: 600 12.5px var(--font-head); color: var(--black); }
+.input, .select, .textarea {
+  width: 100%; font: 400 14px var(--font-body); color: var(--ink); background: var(--white);
+  border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 9px 12px;
+}
+.input:focus, .select:focus, .textarea:focus { outline: none; border-color: var(--black); box-shadow: 0 0 0 1px var(--black); }
+.field.invalid .input, .field.invalid .select { border-color: var(--black); border-style: dashed; }
+.field .error { font-size: 12px; color: var(--black); font-weight: 500; }
+.field .hint { font-size: 12px; color: var(--muted); }
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.form-grid .full { grid-column: 1 / -1; }
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+table.table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.table th {
+  text-align: left; font: 600 12.5px var(--font-head); color: var(--muted);
+  padding: 10px 16px; border-bottom: 1px solid var(--line-strong); white-space: nowrap; background: var(--white);
+}
+.table td { padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.table tbody tr:hover { background: var(--paper); }
+.table th.sortable { cursor: pointer; }
+.table td.num, .table th.num { text-align: right; }
+.pagination { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; color: var(--muted); font-size: 13px; }
+
+/* Status tags: shape and weight, not color */
+.tag { display: inline-block; padding: 2px 8px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 12px; font-weight: 500; }
+.tag-solid { background: var(--black); color: var(--white); border-color: var(--black); }
+.tag-dashed { border-style: dashed; color: var(--muted); }
+
+/* Modal + drawer */
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 50; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.modal { background: var(--white); border-radius: var(--radius); width: 100%; max-width: 560px; max-height: 90vh; overflow: auto; border: 1px solid var(--black); }
+.modal-head, .modal-foot { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.modal-head { border-bottom: 1px solid var(--line); }
+.modal-foot { border-top: 1px solid var(--line); justify-content: flex-end; }
+.modal-body { padding: 20px; }
+.overlay.drawer { justify-content: flex-end; padding: 0; }
+.overlay.drawer .modal { height: 100vh; max-height: 100vh; max-width: 520px; border-radius: 0; }
+
+/* Toasts */
+.toasts { position: fixed; right: 20px; bottom: 20px; z-index: 100; display: grid; gap: 8px; }
+.toast { background: var(--black); color: var(--white); padding: 12px 16px; border-radius: var(--radius); font-size: 13.5px; min-width: 240px; max-width: 360px; }
+.toast.error { background: var(--white); color: var(--black); border: 1px solid var(--black); }
+
+/* States */
+.state { padding: 48px 24px; text-align: center; color: var(--muted); }
+.state strong { display: block; color: var(--black); font: 700 15px var(--font-head); margin-bottom: 4px; }
+.spinner { width: 18px; height: 18px; border: 2px solid var(--line-strong); border-top-color: var(--black); border-radius: 50%; animation: spin .7s linear infinite; display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 2s; } }
+
+/* Bar chart (CSS only, grayscale) */
+.bars { display: flex; align-items: flex-end; gap: 8px; height: 180px; }
+.bars .bar { flex: 1; background: var(--black); min-height: 2px; }
+.bars .bar.alt { background: var(--line-strong); }
